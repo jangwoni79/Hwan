@@ -5,6 +5,12 @@
     <title>Hwan{% block title %}{% endblock %}</title>
 </head>
 <body>
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}">그냥 로그아웃</a>
+{% else %}
+<a href="{% url 'login' %}">그냥 로그인</a>
+{% endif %}
+<p></p>
 {% block content %}
 {% endblock %}
 </body>
